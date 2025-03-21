@@ -224,17 +224,24 @@
           </linearGradient>
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
-      </svg><div>
-        <label for="name">Enter Your Name: </label>
-        <input id="name" type="text" [(ngModel)]="userName" placeholder="Enter your name">
-      </div>
-      
-      <h2>Hello from BridgeLabz, {{ userName }}!</h2>
-      
-<p>To learn any new language or framework, start with Hello World!</p>
-
+      </svg>
+      <!-- Display Hello Message -->
+      <h2 *ngIf="!errorMessage">Hello from BridgeLabz, {{ userName }}!</h2>
+      <!-- Show Error Message if Validation Fails -->
+      <p style="color: red;" *ngIf="errorMessage">{{ errorMessage }}</p>
+    
 <!-- Property Binding to display the logo -->
 <img src="assets/BL_logo_square_jpg.jpg" alt="BridgeLabz Logo" (click)="openBridgeLabz()" style="cursor: pointer;" width="200">
+<div>
+  <label for="name">Enter Your Name: </label>
+  <input 
+    id="name" 
+    type="text" 
+    [(ngModel)]="userName" 
+    (input)="validateUserName()" 
+    placeholder="Enter your name"
+  >
+</div>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
