@@ -8,5 +8,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  logoUrl: string = 'BL_logo_square_jpg.jpg'; 
+  title = 'hello-world-app';
+
+  // Function to open BridgeLabz URL in a new tab
+  openBridgeLabz() {
+    window.open('https://www.bridgelabz.com', '_blank');
+  }
 }
