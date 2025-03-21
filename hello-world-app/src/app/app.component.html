@@ -224,8 +224,13 @@
           </linearGradient>
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
-      </svg>
-      <h1>Hello from BridgeLabz</h1>
+      </svg><div>
+        <label for="name">Enter Your Name: </label>
+        <input id="name" type="text" [(ngModel)]="userName" placeholder="Enter your name">
+      </div>
+      
+      <h2>Hello from BridgeLabz, {{ userName }}!</h2>
+      
 <p>To learn any new language or framework, start with Hello World!</p>
 
 <!-- Property Binding to display the logo -->
